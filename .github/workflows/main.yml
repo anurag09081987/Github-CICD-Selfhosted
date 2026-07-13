@@ -28,7 +28,9 @@ jobs:
 
       - name: Checkov GitHub Action   
         uses: bridgecrewio/checkov-action@v12.1347.0
-        
+        with: 
+          directory: ./resource_group
+
       - name: terraform init
         run: terraform init
         working-directory: ./resource_group
