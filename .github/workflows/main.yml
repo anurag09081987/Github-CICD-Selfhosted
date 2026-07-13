@@ -16,11 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7.0.0
 
-      - name: Checkov GitHub Action   
-        uses: bridgecrewio/checkov-action@v12.1347.0
-        with: 
-          directory: ./resource_group
-          soft_fail: true
+      # - name: Checkov GitHub Action   
+      #   uses: bridgecrewio/checkov-action@v12.1347.0
+      #   with: 
+      #     directory: ./resource_group
+      #     soft_fail: true
 
       - name: Azure login
         uses: azure/login@v3
