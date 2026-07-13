@@ -16,6 +16,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7.0.0
 
+      - name: Checkov GitHub Action   
+        uses: bridgecrewio/checkov-action@v12.1347.0
+        with: 
+          directory: ./resource_group
+          soft_fail: true
+
       - name: Azure login
         uses: azure/login@v3
         with:
@@ -26,11 +32,7 @@ jobs:
       - name: HashiCorp - Setup Terraform  
         uses: hashicorp/setup-terraform@v2.0.3
 
-      - name: Checkov GitHub Action   
-        uses: bridgecrewio/checkov-action@v12.1347.0
-        with: 
-          directory: ./resource_group
-          soft_fail: true
+      
 
       - name: terraform init
         run: terraform init
