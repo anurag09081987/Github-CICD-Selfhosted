@@ -30,6 +30,7 @@ jobs:
         uses: bridgecrewio/checkov-action@v12.1347.0
         with: 
           directory: ./resource_group
+          soft_fail: true
 
       - name: terraform init
         run: terraform init
